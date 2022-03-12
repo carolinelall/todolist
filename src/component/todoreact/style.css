@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
-
+/*@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap"); */
 * {
   margin: 0;
   padding: 0;
@@ -13,15 +12,26 @@ html {
 body{
   overflow-x: hidden;
 }
+.main-head{
+  text-align: center;
+}
+.todo-para{
+  font-size: 2rem;
+  color: rgb(177, 161, 224);
+}
 .main-div {
   min-height: 100vh;
-  background: #e5e6ec;
+  background: rgba(247, 245, 245, 0.835);
   display: flex;
   justify-content: center;
   /* align-items: center; */
 }
-
-.child-div {
+.container-fluid{
+  height: 5rem;
+  padding: 0;
+  font-size: 1.7rem;
+}
+.main-div .child-div {
   text-align: center;
   margin-top: 4rem;
   display: flex;
@@ -30,32 +40,39 @@ body{
   flex-direction: column;
   width: 50rem;
   min-height: 50rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow:  rgb(0 0 0 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
   background: #d4cfee;
   padding-bottom: 2rem;
   margin-bottom: 4rem;
+  border-radius: 2rem;
 }
 
-.child-div figure img {
+
+.main-div .child-div  img {
   width: 10rem;
   height: 8rem;
   margin-top: 2rem;
 }
 
-.child-div figure figcaption {
+.main-div .child-div  .main-heading {
   color:rgb(85, 41, 220);
-  font-size: 2.2rem;
-  font-weight: bold;
+  font-size: 2.4rem;
   padding-top: 2rem;
   text-transform: capitalize;
 }
-
-input {
+.main-div .child-div .addItems{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-div .child-div .addItems input {
   /* display: block; */
   min-width: 40rem;
   height: 3.4rem;
   padding: 2rem 1.2rem;
   font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   line-height: 1.42857143;
   margin-top: 2rem;
   color: rgb(58, 57, 57);
@@ -68,21 +85,21 @@ input {
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-input,
-input:focus,
-input:active,
-input:active:focus {
+.form-control,
+.form-control:focus,
+.form-control:active,
+.form-control:active:focus {
   border: none;
   padding: 2.3rem 1.5rem;
   outline: none;
 }
-input {
+.main-div .child-div .addItems input {
   -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-input:focus {
+.main-div .child-div .addItems input:focus {
   -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
 }
@@ -117,12 +134,12 @@ input:focus {
   font-size: 1.5rem;
 }
 
-.showItems {
+.main-div .child-div .showItems {
   margin-top: 3rem;
   text-align: center;
 }
 
-.eachItem {
+.main-div .child-div .showItems .eachItem {
   background: #fff;
   padding: 1.2rem 1rem;
   border-radius: 0.5rem;
@@ -136,15 +153,18 @@ input:focus {
   align-items: center;
 }
 
-.eachItem:hover {
+.main-div .child-div .showItems .eachItem:hover {
   background: rgb(249, 249, 252);
   color: rgb(85, 41, 220);
 }
 
-.showItems .eachItem h3 {
+.main-div .child-div .showItems .eachItem h3 {
   padding-left: 1rem;
   font-size: 1.6rem;
   color: #fff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 2px;
 }
 
 .fa-trash-alt,
@@ -175,23 +195,27 @@ input:focus {
   color: rgb(100, 214, 47);
 }
 
-.eachItem:hover h3 {
+.main-div .child-div .eachItem:hover .tasks {
   color: rgb(85, 41, 220);
+  font-weight: bold;
 }
 
-.btn {
+.showItems .btn {
   letter-spacing: 0.1em;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
-  line-height: 45px;
+  line-height: 27px;
   max-width: 160px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  width: 100%;
+  width: 13rem;
 }
-.btn:hover {
+.main-div .child-div .input-btn {
+  margin-top: 2rem;
+}
+.main-div .child-div.showItems .btn:hover {
   text-decoration: none;
 }
 
@@ -240,9 +264,8 @@ input:focus {
   transform: translateY(0) scale(1, 1);
 }
 
-.showItems span{
+ span{
   color: rgb(85, 41, 220);
-  font-weight: bold;
 }
 @media (max-width:1026px) {
   .main-div{
@@ -258,19 +281,42 @@ input:focus {
   .main-div .child-div{
     width: 33rem;
   }
-  .main-div .addItems input{
-    min-width: 0;
+  .main-div .child-div .addItems input{
+    min-width: 27rem;
   }
   input .form-control{
    margin-right: 2rem;
   }
-  .eachItem{
+  .main-div .child-div .showItems .eachItem{
     margin-left:0;
-    min-width: 31rem;
+    min-width: 30rem;
   }
 }
 @media (max-width:450px){
-  .main-div{
-    width: 41rem;
+  .main-head{
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
+  .todo-para{
+    font-size: 1.3rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+  .main-div{
+    width: 38rem;
+  }
+  .main-div .child-div{
+    width: 31rem;
+    min-height: 43rem;
+  }
+.main-div .child-div .main-heading{
+  font-size: 2rem;
+}
+.main-div .child-div .addItems input {
+  min-width: 26rem;
+  font-size: 1.5rem;
+}
+.main-div .child-div .showItems .eachItem {
+  min-width: 27rem;
+}
 }
