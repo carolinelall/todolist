@@ -17,6 +17,7 @@ body{
 }
 .todo-para{
   font-size: 2rem;
+  font-weight: 600;
   color: rgb(177, 161, 224);
 }
 .main-div {
@@ -275,7 +276,7 @@ body{
 }
 @media (max-width:576px){
   .main-div{
-    width: 37rem;
+    width: 41rem;
     min-height: 73vh;
   }
   .main-div .child-div{
@@ -292,13 +293,14 @@ body{
     min-width: 30rem;
   }
 }
-@media (max-width:450px){
+
+@media (max-width:400px){
   .main-head{
     padding-bottom: 0;
     margin-bottom: 0;
   }
   .todo-para{
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
   }
